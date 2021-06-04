@@ -62,7 +62,7 @@
 
     <main id="pharmacy">
         <div id="app">
-            <div v-if="getCart" class="d-flex sticky-top flex-row-reverse">
+            <div class="d-flex sticky-top flex-row-reverse">
                 <div class="cartIcon" @click="isCartVisible = !isCartVisible" :class="{'moveCart' : isCartVisible}">
                     <span class="cartCounter">{{updateCartCounter}}</span>
                     <img src="./assets/img/cart.png" alt="cart-img">
@@ -101,7 +101,9 @@
                             </tr>
                         </tfoot>
                     </table>
-
+                    <div class="d-flex justify-content-evenly">
+                        <button class="cartBuyButton">Terminar Compra</button>
+                    </div>
                 </div>
 
             </div>

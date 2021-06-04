@@ -293,3 +293,15 @@ footer .rs img{
     height: 7em;
     resize: none;
 }
+.cartBuyButton{
+    background-color: rgba(240, 62, 199, 0.5);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid var(--color-turquoise);
+    
+}
+.cartBuyButton:hover{
+    box-shadow: 2px 2px 2px 2px var(--color-turquoise);
+}
