@@ -65,8 +65,9 @@ const app = Vue.createApp({
     },
     computed: {
         updateCartCounter() {
-            let cart = JSON.parse(sessionStorage.getItem("cart"))
-            console.log(cart)
+            if (JSON.parse(sessionStorage.getItem("cart"))) {
+                this.cart = JSON.parse(sessionStorage.getItem("cart"))
+            }
             let cartCounter = 0
             if (this.cart.length > 0) {
                 this.cart.map(e => {

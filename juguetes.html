@@ -63,7 +63,7 @@
     <main id="toys">
         <div id="app">
 
-            <div v-if="getCart" class="d-flex sticky-top flex-row-reverse">
+            <div class="d-flex sticky-top flex-row-reverse">
                 <div class="cartIcon" @click="isCartVisible = !isCartVisible" :class="{'moveCart' : isCartVisible}">
                     <span class="cartCounter">{{updateCartCounter}}</span>
                     <img src="./assets/img/cart.png" alt="cart-img">
