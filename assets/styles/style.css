@@ -1,0 +1,295 @@
+:root{
+    --font-title: 'Sigmar One', cursive;
+    --font-content: 'Signika Negative', sans-serif;
+    --color-orange: rgb(240, 141, 86);
+    --color-green: rgb(125, 240, 98);
+    --color-red: rgb(240, 86, 74);
+    --color-turquoise: rgb(50, 240, 236);
+    --color-magenta: rgb(240, 62, 199);
+}
+
+*{
+    margin: 0;
+    padding: 0; 
+}
+
+header{
+    min-height: 20vh;
+    padding: 0 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background:linear-gradient( rgba(255, 255, 255, 0.5) 100%, rgba(255, 255, 255, 0.5)100%),url('../img/bg-wood.jpg');
+    font-family: var(--font-title);
+    align-items: center;
+}
+
+header img{
+    width: 150px;    
+}
+
+header .title{
+    color: var(--color-magenta)
+}
+.title h1 h3{
+    text-align: center;
+}
+header>nav>div>div>ul>li>a{
+    color: var(--color-magenta) !important;
+}
+main{
+    min-height: 70vh;
+}
+ .carousel-item{
+    width: 100vw;
+    height: 40vh;    
+}
+.carousel-caption{
+    background-color: rgba(0,0,0,0.5);
+}
+.carousel-caption>a{
+    text-decoration:  none !important;
+    color: white;
+}
+.carousel-img-1{
+    background-image: url('../img/dog-with-toys.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.carousel-img-2{
+    background-image: url('../img/dog-with-toys2.png');
+    background-position: center;
+    background-size: cover;
+}
+.carousel-img-3{
+    background-image: url('../img/bicho-with-toy.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.carousel-img-4{
+    background-image: url('../img/dog_phone.jpg');
+    background-position: center;
+    background-size: cover;
+} 
+
+.mainContent{
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    margin: 1em;
+    font-family: var(--font-title);
+    color: var(--color-magenta);
+    text-align: center;
+}
+.mainContent-section{
+    margin: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--color-red);
+    border-radius: 5px;
+    font-family: var(--font-content);
+    
+}
+.mainContent-section:hover{
+    box-shadow: 2px 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+.mainContent img{
+    width: 40%;
+    border-radius: 5px;
+}
+
+.section-text p{
+    font-family: var(--font-content);
+    padding: 1em;
+}
+.section-text h3{
+    text-align: center;
+    margin-bottom: 1em;
+    color: var(--color-orange);
+    font-weight: bold;
+}
+
+footer{
+    padding: 0.5em;
+    min-height: 10vh;
+    background-color: var(--color-turquoise);
+    display: flex;
+    justify-content: space-evenly;
+    font-family: var(--font-content);
+}
+footer .service li{
+    list-style: none;
+}
+footer .service li a{
+    text-decoration: none;
+}
+footer .rs img{
+    width: 80px;
+}
+
+.pharmacyCards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cardStyle{
+    width: 18rem; 
+    height: 35rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cardStyle:hover{
+    box-shadow: 2px 2px 2px 2px var(--color-red);
+}
+.cardContent h5{
+    text-align: center;
+    font-family: var(--font-content);
+    font-weight: bold;
+}
+.cardContent hr{
+    margin: 0 2em;
+}
+.cardContent p{
+    text-align: center;
+    padding: 0 1em;
+    max-height: 3rem;
+    overflow: var(--color-orange);
+    font-family: var(--font-content);
+}
+.➕{    
+    box-shadow: 1px 1px 1px 1px var(--color-turquoise);
+    border: none;
+    background-color: var(--color-turquoise);
+    padding: 0 1em;
+    color: white;
+    font-weight: 1000;
+    font-size: 1.5em;
+}
+.prodCounterButtons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0.5em;
+}
+.ultimasUnidades{
+    text-align: center;
+    border: 1px solid var(--color-magenta);
+    background-color: var(--color-red);
+    color: var(--color-turquoise)
+}
+.addToCart{
+    background-color: var(--color-green);
+    width: 100%;
+    border: 0;    
+    margin: 0;
+    padding: 0.5em 0;
+}
+
+.cartIcon img{
+    width: 80px;
+    display: inline-block;
+}
+
+.cartIcon{
+    position: absolute;
+    width: 85px;
+    height: 60px;
+    border: 2px solid var(--color-magenta);
+    background-color: var(--color-magenta);
+    border-radius: 30%;
+    transition: transform 0.5s;
+}
+.cartIcon:hover{
+    cursor: pointer;
+}
+.cartCounter{
+    text-align: center;
+    width: 1.5em;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    right: 57px;
+    margin-top: 5px;
+    background-color: var(--color-orange);
+    border-radius: 50%;
+}
+.➖{
+    background-color: var(--color-red);
+    border-color: white;
+}
+.moveCart{
+    transform: translateX(-50vw);
+}
+
+.cartTable>table{
+    color: white;
+    font-family: var(--font-content);
+    font-weight: bold;
+    margin-top: 2vh;
+}
+
+.cartContent{
+    position: absolute;
+    width: 50vw;
+    top: 0vh;
+    right: -50vw;
+    height: 100vh;
+    background-color: rgba(240, 141, 86, 0.9);
+    font-family: var(--font-content);     
+    transition: transform 0.5s;
+    overflow-x: hidden;
+}
+.cartShow{
+    transform: translateX(-50vw);
+}
+.contactForm{
+    font-family: var(--font-content);
+}
+.tituloContacto h1{
+    text-align: center;
+    font-family: var(--font-title);
+    color: var(--color-magenta);
+    margin: 1em;
+}
+.fieldsetContactForm{
+    background-color: rgba(50, 240, 236, 0.4);
+    border-radius: 10px;
+    padding: 1em 1em;
+}
+.fieldsetContactForm input, select, textarea{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid var(--color-magenta);
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 10px;
+    margin: 0.5em 0;
+    
+}
+.fieldsetContactForm input[type=text], input[type=number], input[type=mail] {
+    width: 100%;
+}
+.fieldsetContactForm select{
+    width: 30%;
+}
+#otherPet{
+    width: 60%;
+    margin-left: 2em;
+}
+.fieldsetContactForm input:hover, textarea:hover, select:hover{
+    box-shadow: 2px 1px 1px 1px var(--color-magenta);
+}
+.fieldsetContactForm input:focus, textarea:focus{
+    outline: none;
+}
+.fieldsetContactForm textarea{
+    width: 100%;
+    height: 7em;
+    resize: none;
+}

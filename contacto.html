@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franco - PetShop</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="./assets/styles/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
+
+    <!-- CDN Vue JS -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="./assets/img/schnauzer-logo.png" class="img-fluid" alt="schnauzer-logo">
+        </div>
+        <div class="title">
+            <h1>Franco</h1>
+            <h3>Pet Shop</h3>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="farmacia.html">Farmacia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="juguetes.html">Juguetes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" active href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="app">
+        <div class="container tituloContacto">
+            <h1>Estemos en Contacto!</h1>
+        </div>
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="col-lg-7 col-md-7 col-sm-7">
+                <img src="./assets/img/contact-dog.jpg" class="img-fluid" alt="img_contact-dogo">
+            </div>
+            <div class="contactForm col-lg-4 col-md-4 col-sm-4">
+                <fieldset class="fieldsetContactForm">
+                    <form id="contactForm" @submit.prevent="onSubmitContactForm">
+                        <legend class="legendContactForm">Datos y comentarios: </legend>
+                        <input type="text" id="name" placeholder="Nombre y Apellido">
+                        <input type="number" name="phone" id="phone" placeholder="Numero de teléfono sin 0 y sin 15">
+                        <input type="mail" id="mail" name="mail" placeholder="@email">
+                        <select name="pet" id="pet">
+                            <option value="select" selected>Mascota:</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Otro">Otra</option>
+                        </select>
+                        <input type="text" name="otherPet" id="otherPet" placeholder="Otra">
+                        <textarea name="comment" id="contactComment"></textarea>
+                        <div class="d-flex justify-content-evenly">
+                            <input type="submit" name="submit" id="submitContactForm" value="Enviar">
+                            <input type="reset" name="reset" id="resetContactForm" value="Borrar">
+                        </div>
+                    </form>
+
+                </fieldset>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="author">
+            <p>&copy;Pablo Herrera</p>
+            <p><a href="mailto:paaherre@gmail.com">paaherre@gmail.com</a></p>
+        </div>
+        <div class="service">
+            <ul><span>Servicios: </span>
+                <li><a href="farmacia.html">Farmacia</a></li>
+                <li><a href="juguetes.html">Juguetes</a></li>
+            </ul>
+        </div>
+        <div class="rs">
+            <a href="https://www.facebook.com" target="_blank"><img src="./assets/img/logo_fb.png" alt="logo-fb"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="./assets/img/logo_insta.png"
+                    alt="logo_insta"></a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Local JS -->
+    <script src="./js/main.js"></script>
+    <script src="./js/components/cardsCounter.js"></script>
+
+    <!-- Mount App -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+
+</body>
+
+</html>
