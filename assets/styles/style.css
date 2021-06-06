@@ -11,6 +11,7 @@
 *{
     margin: 0;
     padding: 0; 
+    
 }
 
 header{
@@ -234,18 +235,21 @@ footer .rs img{
     margin-top: 2vh;
 }
 
-.cartContent{
+.cartContent{    
+    display: block;
     position: absolute;
-    width: 50vw;
+    width: 0;
     top: 0vh;
     right: -50vw;
     height: 100vh;
     background-color: rgba(240, 141, 86, 0.9);
     font-family: var(--font-content);     
     transition: transform 0.5s;
-    overflow-x: hidden;
+    overflow: hidden;
+    
 }
 .cartShow{
+    width: 50vw;
     transform: translateX(-50vw);
 }
 .contactForm{
