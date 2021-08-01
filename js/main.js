@@ -60,7 +60,29 @@ const app = Vue.createApp({
                 icon: "success",
                 button: "Gracias Vuelvas Prontos",
             });
+        },
+        comprar() {
+            var url = 'http://localhost:8080/api/payment';
+            var data = {
+                name: "Melba Morel",
+                number: "8387-3509-2174-4540",
+                cvv: 823,
+                thruDate: "2026-07-26",
+                description: "Para el Agus",
+                amount: 742
+            };
+
+            fetch(url, {
+                method: 'POST', // or 'PUT'
+                body: JSON.stringify(data), // data can be `string` or {object}!
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+                .catch(error => console.error('Error:', error))
+                .then(response => console.log('Success:', response));
         }
+
 
     },
     computed: {
@@ -88,7 +110,8 @@ const app = Vue.createApp({
             } else {
                 return false
             }
-        }
+        },
+
     }
 })
 
