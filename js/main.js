@@ -92,8 +92,8 @@ const app = Vue.createApp({
                 }
             })
                 .then(res => res.json())
-                .catch(error => console.error('Error:', error))
-                .then(response => console.log('Procesado Correctamente', response))
+                .catch(error => swal('Error:', error))
+                .then(response => swal('Procesado Correctamente', response))
         }
     },
     computed: {
