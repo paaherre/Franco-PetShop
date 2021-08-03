@@ -101,6 +101,7 @@
                             </tr>
                         </tfoot>
                     </table>
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal">Realizar Compra</button>
                 </div>
 
             </div>
@@ -117,6 +118,44 @@
                                 Ultimas unidades!!!</h6>
                             <cards-counter :id="toyProduct._id" :name="toyProduct.nombre" :stock="toyProduct.stock"
                                 :price="toyProduct.precio" @add-to-cart="updateCart"></cards-counter>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Realizar Pago</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body realizarPago">
+                            <div class="pagosLabel">
+                                <label for="name">Nombre: </label>
+                                <label for="numero">Número de Tarjeta: </label>
+                                <label for="cvv">Código de seguridad: </label>
+                                <label for="vencimiento">Fecha de Vencimiento: </label>
+                                <label for="descripcion">Descripción: </label>
+                                <label for="monto">Monto: </label>
+                            </div>
+                            <div class="pagosInput">
+                                <input type="text" name="name" v-model="cardName" placeholder="Titular de tarjeta">
+                                <input type="text" name="numero" v-model="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+                                <input type="number" name="cvv" v-model="cardCvv" placeholder="XXX">
+                                <input type="text" name="vencimiento" v-model="cardVto" placeholder="aa/mm">
+                                <input type="text" name="descripcion" v-model="cardDesc"
+                                    placeholder="Pago Franco PetShop">
+                                <input type="number" name="monto" v-model="cardMonto" placeholder="$">
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                                @click="resetCard">Cancel</button>
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                @click="confirmarPago">Confirm</button>
                         </div>
                     </div>
                 </div>

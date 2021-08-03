@@ -5,7 +5,12 @@ const app = Vue.createApp({
             toysData: [],
             cart: [],
             isCartVisible: false,
-
+            cardName: "",
+            cardNumber: "",
+            cardCvv: "",
+            cardVto: "",
+            cardDesc: "",
+            cardMonto: "",
         };
     },
 
@@ -61,29 +66,35 @@ const app = Vue.createApp({
                 button: "Gracias Vuelvas Prontos",
             });
         },
-        comprar() {
+        resetCard() {
+            this.cardName = ""
+            this.cardNumber = ""
+            this.cardCvv = ""
+            this.cardVto = ""
+            this.cardDesc = ""
+            this.cardMonto = ""
+        },
+        confirmarPago() {
             var url = 'http://localhost:8080/api/payment';
             var data = {
-                name: "Melba Morel",
-                number: "8387-3509-2174-4540",
-                cvv: 823,
-                thruDate: "2026-07-26",
-                description: "Para el Agus",
-                amount: 742
+                name: this.cardName,
+                number: this.cardNumber,
+                cvv: parseInt(this.cardCvv),
+                thruDate: "20" + this.cardVto.replace("/", "-") + "-29",
+                description: "Franco Petshop - " + this.cardDesc,
+                amount: parseInt(this.cardMonto)
             };
-
             fetch(url, {
                 method: 'POST', // or 'PUT'
-                body: JSON.stringify(data), // data can be `string` or {object}!
+                body: JSON.stringify(data), // data can be `string` or {object}!                
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(res => res.json())
+            })
+                .then(res => res.json())
                 .catch(error => console.error('Error:', error))
-                .then(response => console.log('Success:', response));
+                .then(response => console.log('Procesado Correctamente', response))
         }
-
-
     },
     computed: {
         updateCartCounter() {
@@ -115,14 +126,3 @@ const app = Vue.createApp({
     }
 })
 
-
-/*
-descripcion: "Power Ultra Pipeta controla y previene la infestación por pulgas y garrapatas en la mascota. Mata en forma instantánea pulgas y garrapatas, protegiendo a su mascota por 30 días. Corta el ciclo de pulgas eliminándolas antes de que se reproduzcan."
-imagen: "https://puppis.vteximg.com.br/arquivos/ids/157833-1000-1000/Power-Ultra.jpg?v=635852684254630000"
-nombre: "Power Ultra ( 1 Pipeta )"
-precio: 329
-stock: 1
-tipo: "Medicamento"
-__v: 0
-_id: "5f20f56454c7bc0017856c84"
-*/
