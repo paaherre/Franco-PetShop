@@ -91,9 +91,16 @@ const app = Vue.createApp({
                     'Content-Type': 'application/json'
                 }
             })
-                .then(res => res.json())
-                .catch(error => swal('Error:', error))
-                .then(response => swal('Procesado Correctamente', response))
+                /* .then(res => console.log(res.json())) */
+                /*.then(response => alert(data.response))*/
+                .then(res => {
+                    console.log(res.status)
+                    if (res.status == 200 || res.status == 202) {
+                        return swal('Pago procesado correctamente', res.status)
+                    }
+                    return swal('No se pudo procesar el pago')
+                })
+                .catch(error => alert(data.error))
         }
     },
     computed: {
