@@ -94,13 +94,12 @@ const app = Vue.createApp({
                 /* .then(res => console.log(res.json())) */
                 /*.then(response => alert(data.response))*/
                 .then(res => {
-                    console.log(res.status)
                     if (res.status == 200 || res.status == 202) {
-                        return swal('Pago procesado correctamente', res.status)
+                        return swal('Pago Procesado Correctamente')
                     }
-                    return swal('No se pudo procesar el pago')
+                    return swal('No se pudo procesar el pago, revise los datos de la tarjeta')
                 })
-                .catch(error => alert(data.error))
+                .catch(error => console.log(error))
         }
     },
     computed: {
